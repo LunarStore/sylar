@@ -1,0 +1,5 @@
+server:
+    work_path: /apps/work/lunar
+    pid_file: lunar.pid
+tcp_server:
+    read_timeout: 60000

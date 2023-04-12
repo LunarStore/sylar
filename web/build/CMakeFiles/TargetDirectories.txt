@@ -1,0 +1,4 @@
+/root/Lunar/web/build/CMakeFiles/rebuild_cache.dir
+/root/Lunar/web/build/CMakeFiles/edit_cache.dir
+/root/Lunar/web/build/CMakeFiles/out.dir
+/root/Lunar/web/build/CMakeFiles/main.dir

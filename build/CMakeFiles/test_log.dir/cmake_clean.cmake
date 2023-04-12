@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/test_log.dir/tests/test_log.cc.o"
+  "CMakeFiles/test_log.dir/src/base/log.cc.o"
+  "CMakeFiles/test_log.dir/src/base/util.cc.o"
+  "CMakeFiles/test_log.dir/src/base/config.cc.o"
+  "CMakeFiles/test_log.dir/src/base/thread.cc.o"
+  "CMakeFiles/test_log.dir/src/base/mutex.cc.o"
+  "CMakeFiles/test_log.dir/src/base/fiber.cc.o"
+  "CMakeFiles/test_log.dir/src/base/scheduler.cc.o"
+  "CMakeFiles/test_log.dir/src/base/iomanager.cc.o"
+  "CMakeFiles/test_log.dir/src/base/timer.cc.o"
+  "CMakeFiles/test_log.dir/src/base/fdmanager.cc.o"
+  "CMakeFiles/test_log.dir/src/base/hook.cc.o"
+  "CMakeFiles/test_log.dir/src/net/address.cc.o"
+  "CMakeFiles/test_log.dir/src/net/socket.cc.o"
+  "CMakeFiles/test_log.dir/src/net/stream.cc.o"
+  "CMakeFiles/test_log.dir/src/net/socketstream.cc.o"
+  "CMakeFiles/test_log.dir/src/net/bytearray.cc.o"
+  "CMakeFiles/test_log.dir/src/http/http.cc.o"
+  "CMakeFiles/test_log.dir/src/http/httpparser.cc.o"
+  "CMakeFiles/test_log.dir/src/http/httpsession.cc.o"
+  "CMakeFiles/test_log.dir/src/http/http11_parser.rl.cc.o"
+  "CMakeFiles/test_log.dir/src/http/httpclient_parser.rl.cc.o"
+  "CMakeFiles/test_log.dir/src/net/tcpserver.cc.o"
+  "CMakeFiles/test_log.dir/src/http/httpserver.cc.o"
+  "CMakeFiles/test_log.dir/src/http/servlet.cc.o"
+  "CMakeFiles/test_log.dir/src/init/daemon.cc.o"
+  "CMakeFiles/test_log.dir/src/init/env.cc.o"
+  "CMakeFiles/test_log.dir/src/init/application.cc.o"
+  "CMakeFiles/test_log.dir/src/base/worker.cc.o"
+  "CMakeFiles/test_log.dir/src/init/module.cc.o"
+  "CMakeFiles/test_log.dir/src/init/library.cc.o"
+  "../bin/test_log.pdb"
+  "../bin/test_log"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/test_log.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

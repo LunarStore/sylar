@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/main.dir/index.cc.o  -o ../main -Wl,-rpath,/root/Lunar/lib /usr/local/lib64/libyaml-cpp.a -lpthread -ldl /root/Lunar/lib/liblunarLib.so 

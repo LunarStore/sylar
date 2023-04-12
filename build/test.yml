@@ -1,0 +1,6 @@
+test:
+    - 1
+    - 2
+    - 3
+tcp_server:
+    read_timeout: 5000
