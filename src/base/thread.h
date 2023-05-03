@@ -21,7 +21,7 @@
 #include"base/noncopyable.h"
 namespace lunar{
 
-    class Thread : public std::enable_shared_from_this<Thread>, Noncopyable{
+    class Thread: Noncopyable{
     public:
         typedef std::shared_ptr<Thread> ptr;
         typedef std::function<void(void)> CallBackType;
@@ -32,7 +32,7 @@ namespace lunar{
         static void* Run(void* arg);
         static const std::string& GetName();
         static void SetName(const std::string& name);
-        static Thread::ptr GetThis();
+        static Thread* GetThis();
     public:
         void join();
         //void setName(const std::string name);

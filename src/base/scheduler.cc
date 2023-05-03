@@ -10,6 +10,7 @@ namespace lunar{
         Fiber::GetThis();
 
         if(useCur){
+            //不能使用shared_from_this!!!，否则会循环引用！！！
             m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), true));
 
             //t_shceRunFiber = m_rootFiber;
@@ -55,7 +56,11 @@ namespace lunar{
         m_stop = true;
         lock.unlock();
 
-        if(m_rootFiber){
+        for(size_t i = 0; i < m_threadCount; i++){
+            tickle();
+        }
+        if(m_rootFiber && !isStoped()){
+            tickle();
             m_rootFiber->swapIn();
         }
 

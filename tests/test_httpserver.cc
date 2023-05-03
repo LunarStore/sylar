@@ -57,5 +57,7 @@ int main(int argc, char** argv) {
     lunar::IOManager iom(2, "main", true);
     worker.reset(new lunar::IOManager(3,  "worker", false));
     iom.schedule(run);
+    LUNAR_LOG_NAME("system")->setLevel(lunar::LogLevel::INFO);
+    LUNAR_LOG_NAME("destroy")->setLevel(lunar::LogLevel::INFO);
     return 0;
 }

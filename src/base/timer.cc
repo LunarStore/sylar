@@ -73,7 +73,7 @@ namespace lunar{
         m_mgr->m_tss.erase(pos);
         wlock.unlock();
 
-        time_t start;
+        uint64_t start;
         if(fromNow){
             start = lunar::GetCurrentMiliSTime();
         }else{
@@ -140,7 +140,7 @@ namespace lunar{
         }
     }
 
-    time_t TimerManager::getFirstTimeOut(){
+    uint64_t TimerManager::getFirstTimeOut(){
         MutexType::ReadLock rlock(m_rwmutex);
         //
         if(m_tss.begin() == m_tss.end()){

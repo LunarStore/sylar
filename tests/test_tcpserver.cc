@@ -20,7 +20,7 @@ void run() {
     
 }
 int main(int argc, char** argv) {
-    lunar::IOManager iom(10);
+    lunar::IOManager iom(2);
     iom.schedule(run);
     return 0;
 }

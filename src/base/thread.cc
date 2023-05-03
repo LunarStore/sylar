@@ -34,9 +34,9 @@ namespace lunar{
         }
     }
 
-    Thread::ptr Thread::GetThis(){
+    Thread* Thread::GetThis(){
         if(t_thread){
-            return t_thread->shared_from_this();
+            return t_thread;
         }else{
             return nullptr;
         }

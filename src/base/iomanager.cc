@@ -66,7 +66,7 @@ namespace lunar{
         //fd可读/边沿触发
         m_epollfd = epoll_create(50);
         epoll_event epevent = { 0 };
-        epevent.events = EPOLLOUT | EPOLLET;
+        epevent.events = EPOLLIN | EPOLLET;
         epevent.data.fd = m_pipfd[0];
         rt = epoll_ctl(m_epollfd, EPOLL_CTL_ADD, m_pipfd[0], &epevent);
 
@@ -144,6 +144,7 @@ namespace lunar{
 
         if(cb){
             ectx.m_cb = cb;
+            //error note: 不能用shared_from_this
             //ectx.m_scheduler = Scheduler::GetThis() || shared_from_this();
         }else{
             ectx.m_fiber = Fiber::GetThis();
@@ -268,8 +269,8 @@ namespace lunar{
             !(TimerManager::hasTimer());
     }
 
-    static const uint32_t MAXFD = 32;
-    static time_t MAX_TIMEOUT = 3000;
+    static const uint32_t MAXFD = 256;
+    static uint64_t MAX_TIMEOUT = 3000;
     void IOManager::idle(){
         epoll_event* epevents = new epoll_event[MAXFD]();
         std::shared_ptr<epoll_event> shared_event(epevents ,[](epoll_event *ptr){
@@ -278,12 +279,12 @@ namespace lunar{
         while(!isStoped()){
             int rt = 0;
             do{
-                time_t curTime = lunar::GetCurrentMiliSTime();
-                time_t firstTimerTime = TimerManager::getFirstTimeOut();
-                time_t timeOut = firstTimerTime > curTime ? firstTimerTime - curTime : 0;
+                uint64_t curTime = lunar::GetCurrentMiliSTime();
+                uint64_t firstTimerTime = TimerManager::getFirstTimeOut();
+                uint64_t timeOut = firstTimerTime > curTime ? firstTimerTime - curTime : 0;
 
                 timeOut = std::min(timeOut, MAX_TIMEOUT);
-                rt = epoll_wait(m_epollfd, epevents, MAXFD, timeOut);
+                rt = epoll_wait(m_epollfd, epevents, MAXFD, (time_t)timeOut);
             }while((rt < 0) && (errno == EINTR));
 
             std::vector<Timer::CallBackType> cbs;

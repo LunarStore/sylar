@@ -46,7 +46,7 @@ namespace lunar{
             node = host.substr(0, pos - host.c_str());
             service = host.substr(pos - host.c_str() + 1);
         }
-        int rt = getaddrinfo(node.c_str(), service.c_str(), &hints, &res);
+        int rt = getaddrinfo(node.c_str(), service.empty() == true ? nullptr : service.c_str(), &hints, &res);
         if(rt){
             LUNAR_LOG_ERROR(g_logger) << "error : Address::LookUp(host:" << host << ","
                 << family << "," << type << ","

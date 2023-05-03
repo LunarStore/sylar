@@ -60,10 +60,11 @@ namespace lunar{
         bool addTimer(Timer::ptr time);
 
         void listAllExpire(std::vector<std::function<void (void) >>& cbs);
-        time_t getFirstTimeOut();
+        uint64_t getFirstTimeOut();
         bool hasTimer();
     public:
         virtual void onTimerInsertedFront() = 0;
+        virtual ~TimerManager(){}
     private:
         TimerSetType m_tss;
         MutexType m_rwmutex;

@@ -24,7 +24,7 @@
 #include"base/mutex.h"
 namespace lunar{
     //类线程池
-    class Scheduler : public std::enable_shared_from_this<Scheduler>{
+    class Scheduler{
     public:
         typedef std::shared_ptr<Scheduler> ptr;
         typedef Mutex MutexType;
@@ -50,7 +50,7 @@ namespace lunar{
         };
     public:
         Scheduler(uint32_t threadCount, const std::string& name,bool useCur = true);
-        ~Scheduler();
+        virtual ~Scheduler();
         const std::string& getName() const { return m_name;}
         void start();
         void stop();

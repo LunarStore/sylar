@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC   -shared -Wl,-soname,libwebLib.so -o /root/Lunar/bin/module/libwebLib.so CMakeFiles/out.dir/index.cc.o -Wl,-rpath,/root/Lunar/lib /usr/local/lib64/libyaml-cpp.a -lpthread -ldl /root/Lunar/lib/liblunarLib.so 

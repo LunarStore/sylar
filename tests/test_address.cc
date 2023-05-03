@@ -30,7 +30,7 @@ void testGetInterfaceAddresses(){
 }
 
 int main(){
-    //testLookUp();
-    testGetInterfaceAddresses();
+    testLookUp();
+    // testGetInterfaceAddresses();
     return 0;
 }

@@ -16,7 +16,7 @@ void fun(){
 
 int main(){
     g_logger->setLevel(lunar::LogLevel::ERROR);
-    lunar::Scheduler::ptr sch(new lunar::Scheduler(1, "test_sche"));
+    lunar::Scheduler::ptr sch(new lunar::Scheduler(2, "test_sche"));
     sch->schedule(fun);
     sch->start();
     sch->stop();

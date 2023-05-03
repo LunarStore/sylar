@@ -1,3 +1,0 @@
-/root/Lunar/CMakeFiles/rebuild_cache.dir
-/root/Lunar/CMakeFiles/edit_cache.dir
-/root/Lunar/CMakeFiles/test_log.dir
